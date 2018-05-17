@@ -16,7 +16,7 @@ RCT_EXPORT_METHOD(configure:(NSArray*)scopes iosClientId:(NSString*)iosClientId 
 
   [GIDSignIn sharedInstance].scopes = scopes;
   [GIDSignIn sharedInstance].clientID = iosClientId;
-  
+
   if (hostedDomain != nil) {
     [GIDSignIn sharedInstance].hostedDomain = hostedDomain;
   }
@@ -142,11 +142,6 @@ RCT_EXPORT_METHOD(revokeAccess)
         topController = topController.presentedViewController;
     }
     return topController;
-}
-
-+ (BOOL)requiresMainQueueSetup
-{
-    return YES;
 }
 
 @end
